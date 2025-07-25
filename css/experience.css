@@ -1,0 +1,54 @@
+/* Experience Section */
+.experience {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-text);
+  margin-top: 1rem;
+}
+
+.company {
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+  list-style: none;
+}
+
+.timeline-content li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.timeline-content li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+/* Skills tags */
+.skills span {
+    font-size: 0.9rem;
+    color: var(--primary-text);
+    margin-left: 5px;
+    background-color: var(--accent-before);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.skills span:hover {
+    /* cursor: pointer; */
+    transition: all 0.3s ease;
+    background-color: var(--accent-after);
+}

@@ -1,0 +1,32 @@
+/* About section */
+.about {
+  /* padding: 3rem 0; */
+  min-height: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  display: block;
+  color: var(--secondary-text);
+}
+
+.stats {
+  display: flex;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+  margin-top: 1rem;
+}

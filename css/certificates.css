@@ -1,0 +1,84 @@
+/* Certificates Section */
+.certificates {
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.recognition-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* .recognition-badges.single-row {
+  margin-bottom: 0;
+} */
+
+.badge-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+}
+
+.badge-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10%;
+  border: 3px solid var(--primary-text);
+  padding: 10px;
+  box-shadow: 0.5rem 0.5rem var(--primary-text);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+}
+
+.badge-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0.8rem 0.8rem var(--primary-text);
+}
+
+.badge-in-progress {
+  filter: grayscale(100%) brightness(0.8) opacity(0.7);
+  position: relative;
+}
+
+.badge-wip-label {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #888;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 8px;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.badge-item a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.certifacte-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-text);
+}
+
+.certifacte-subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}

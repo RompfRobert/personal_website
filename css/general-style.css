@@ -1,0 +1,220 @@
+:root {
+  --bg-color: whitesmoke;
+  --primary-text: black;
+  --secondary-text: dimgrey;
+  --accent-color: hsl(14, 100%, 57%);
+  --accent-text: whitesmoke;
+  --accent-before: hsla(15, 100%, 70%, 0.4);
+  --accent-after: hsla(15, 100%, 70%, 0.8);
+}
+[data-theme="dark"] {
+  --bg-color: #040404;
+  --primary-text: white;
+  --secondary-text: lightgrey;
+  --accent-color: coral;
+  --accent-text: #222222;
+  --accent-before: hsla(15, 100%, 70%, 0.5);
+  --accent-after: hsl(14, 100%, 47%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: monospace;
+  color: var(--primary-text);
+  overflow-x: hidden;
+  background: var(--bg-color);
+  font-size: 1rem;
+}
+
+/* Smooth scrolling with conditional snap */
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+.main-title,
+.accent-title,
+.section-title {
+  letter-spacing: 1px;
+}
+
+/* Header */
+.header {
+  /* background: hsl(0, 0%, 100%); */
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  /* border-bottom: 1px solid hsl(0, 0%, 90%); */
+  backdrop-filter: blur(10px);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(8, end);
+}
+
+/* .logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-text);
+  background: linear-gradient(135deg, hsl(230, 77%, 65%) 0%, hsl(266, 35%, 46%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+} */
+
+/* Terminal Navigation - Home Buttons */
+.terminal-nav {
+  display: flex;
+  align-items: center;
+  /* font-size: 1rem; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.terminal-nav:hover {
+  color: var(--secondary-text);
+}
+
+.terminal-cursor {
+  color: var(--accent-color); /* Orange/red color like in the reference */
+  font-weight: bold;
+  margin-left: 1px;
+  animation: blink 1s infinite;
+}
+
+/* Nav Links */
+.nav {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.nav-link {
+  color: var(--primary-text);
+  text-decoration: none;
+  /* font-size: 1rem; */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-text);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* background: linear-gradient(135deg, hsl(230, 77%, 65%) 0%, hsl(266, 35%, 46%) 100%); */
+}
+
+/* Buttons */
+.primary-button,
+.secondary-button {
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  box-shadow: 0.3rem 0.3rem var(--primary-text);
+  color: var(--primary-text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 3px solid var(--primary-text);
+  position: relative;
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+  border: 3px solid var(--accent-color);
+}
+.primary-button:hover {
+  transform: scale(1.03);
+  background-color: transparent;
+  color: var(--accent-color);
+  box-shadow: 0.4rem 0.4rem var(--accent-color);
+}
+
+.secondary-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0.4rem 0.4rem var(--accent-color);
+}
+
+.theme-toggle {
+  background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+}
+
+/* Sections */
+section {
+ min-height: 100vh;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer */
+.footer {
+  background: var(--footer-bg);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
