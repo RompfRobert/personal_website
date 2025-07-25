@@ -1,64 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robert Rompf</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Rompf - Senior Cloud Infrastructure Engineer</title>
+    <link rel="stylesheet" href="css/general-style.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/certificates.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-left"><a href="#home">Home</a></div>
-    <button class="hamburger" aria-label="Toggle navigation">☰</button>
-    <div class="navbar-right">
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
 
-  <main>
-    <section id="home" class="hero-section">
-      <img src="./img/pf-pic.jpeg" alt="Photo of Robert Rompf">
-      <div class="text-content">
-        <h1>Hi, I’m Robert!</h1>
-        <p>
-          I’m a Senior Cloud Infrastructure Engineer and Linux System Administrator specializing in designing
-          and maintaining secure, scalable, and cost-efficient cloud solutions, with a primary focus on AWS.
-          With extensive experience in Linux systems and a passion for automation, I am transitioning into a
-          DevOps-focused career, integrating practices like continuous integration, delivery, and deployment
-          to streamline pipelines and enhance collaboration. I’m committed to helping organizations succeed by
-          optimizing cloud environments and driving innovation at the intersection of cloud infrastructure and DevOps.
-        </p>
-        <p class="highlight">Let’s shape the future of technology together!</p>
-        <div class="button-container">
-          <a href="#contact" class="button get-in-touch">Get in Touch</a>
-          <a href="CV_Robert_Rompf_2023.pdf" class="button download-cv" download>Download My CV</a>
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="terminal-nav" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+                <span class="terminal-prompt">&gt; $ Home </span>
+                <span class="terminal-text" id="terminal-text"></span>
+                <span class="terminal-cursor">█</span>
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience & Skills</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button id="theme-toggle" class="nav-link theme-toggle">🌙</button>
+            </nav>
         </div>
-      </div>
-    </section>
+    </div>
+</header>
 
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
-      <p>These are my projects that I have worked on.</p>
-    </section>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Hi, I'm Robert
+                </h1>
+                <h2 class="main-title">
+                    CLOUD INFRASTRUCTURE ENGINEER | DEVOPS ENGINEER | LINUX SYSTEM ADMINISTRATOR
+                </h2>
+                <p class="hero-subtitle">
+                    Building scalable cloud platforms and automating workflows.
+                    Turning manual processes into efficient automations with <strong>3+ years</strong> of hands-on experience.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="primary-button">Get In Touch</a>
+                    <a href="resume.pdf" class="secondary-button" download>Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img class="dark-image" src="img/me_black.png" alt="Robert (light mode)">
+                <img class="light-image"  src="img/me_white.png" alt="Robert (dark mode)">
+            </div>
+        </div>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>You can reach me via <a href="https://www.linkedin.com/in/robertrompf/">LinkedIn</a> or
-         <a href="https://github.com/rompfrobert">GitHub</a>.</p>
-      <form>
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Your email">
-        <textarea cols="30" rows="5" placeholder="Your message"></textarea>
-        <button type="submit" class="button get-in-touch">Send</button>
-      </form>
-    </section>
-  </main>
+    </div>
+</section>
 
-  <footer>
-    <p>© 2024 Robert Rompf. All rights reserved.</p>
-  </footer>
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm passionate about cloud infrastructure, DevOps automation, and building scalable, reliable systems. Currently, I work as a Senior Cloud Infrastructure Engineer at Accenture in Bratislava, where I focus on streamlining operations, reducing manual effort, and enabling teams through automation.</p>
+                <p>I thrive on solving real-world problems with clean, efficient solutions—whether it's scripting repeatable tasks, integrating platforms, or optimizing infrastructure workflows. I'm constantly learning and expanding my toolkit, which is reflected in my multi-language background, industry certifications, and deep curiosity about emerging DevOps practices.</p>
 
-  <script src="script.js"></script>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Languages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">EXPERIENCE & SKILLS</h2>
+
+    <div class="timeline-content">
+      <h3>Senior Cloud Infrastructure Engineer</h3>
+      <p class="company">Accenture • 12/2024 – Present</p>
+      <ul class="skills">
+        <li>
+          Developed a proprietary AWS CLI-based orchestration tool that unified multiple automation scripts into a single, user-friendly package—enhancing maintainability, usability. Reduced human error, streamlined repetitive tasks, and improved operational efficiency by 5x in managing cloud infrastructure.
+          <span>#python</span><span>#bash</span><span>#GitLab</span><span>#GitLab CI</span><span>#aws</span><span>#boto3</span><span>#linux</span>
+        </li>
+        <li>
+            Designed and implemented a fully automated disaster-recovery pipeline using GitLab CI/CD and containerized jobs, executing on a defined schedule to ensure continuous protection.
+            <span>#CloudFormation</span><span>#GitLab CI</span><span>#terraform</span><span>#aws</span><span>#python</span><span>#s3</span><span>#yaml</span><span>#containers</span><span>#git</span><span>#GitLab</span><span>#automation</span><span>#DisasterRecovery</span>
+        </li>
+        <li>
+          Automated EC2 instance decommissioning—eliminating manual interactions with AWS, Red Hat Hybrid Console, and Satellite; ensured error‑free execution and sub‑minute completion times.
+          <span>#REST API</span><span>#python</span><span>#RHEL</span><span>#boto3</span><span>#linux</span>
+        </li>
+        <li>
+          Integrated ServiceNow with AWS APIs to power an on‑demand self-service backup portal—reducing manual intervention, on‑call burden, and paving the way for self‑service infrastructure requests.
+          <span>#REST API</span><span>#API Gateway</span><span>#lambda</span><span>#python</span><span>#ServiceNow</span><span>#selfservice</span>
+        </li>
+        <li>
+          Provided technical mentorship and DevOps best‑practice guidance, driving automation adoption and cross‑team collaboration.
+          <span>#mentorship</span><span>#training</span><span>#leadership</span><span>#documentation</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="timeline-content">
+      <h3>Cloud Infrastructure Engineer</h3>
+      <p class="company">Accenture • 02/2023 – 11/2024</p>
+      <ul class="skills">
+        <li>
+          Crafted Python automation scripts for EC2 lifecycle, AMI restores, and scheduled backups—cutting execution times by 5× and improving operational efficiency  
+          <span>#python</span><span>#aws</span><span>#boto3</span><span>#optimization</span><span>#coding</span>
+        </li>
+        <li>
+          Developed a multi‑region file‑sync tool to guarantee data consistency across three sites—eliminating manual errors and ensuring robust replication  
+          <span>#bash</span><span>#python</span><span>#GitLab</span><span>#s3</span><span>#datareplication</span><span>#git</span>
+        </li>
+        <li>
+          Rolled out Ansible playbooks for automated Linux patching—slashing evening & weekend maintenance windows and standardizing configuration drift controls  
+          <span>#ansible</span><span>#RHEL</span><span>#linux</span><span>#maintenance</span><span>#security</span>
+        </li>
+        <li>
+          Managed a fleet of RHEL servers-handling system administration, monitoring, patch orchestration, and on‑call troubleshooting to maintain 99.9% uptime  
+          <span>#systemadmin</span><span>#monitoring</span><span>#troubleshooting</span><span>#RHEL</span><span>#linux</span>
+        </li>
+        <li>
+          Created reusable Bash scripts and Ansible roles for routine sysadmin tasks—accelerating deployments and freeing up engineering time for strategic projects  
+          <span>#bash</span><span>#ansible</span><span>#automation</span><span>#reusability</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section id="certificates" class="certificates">
+    <div class="container">
+        <h2 class="certifacte-title">CERTIFICATES</h2>
+        <h3 class="certifacte-subtitle"> Click on any of these to view my badge on credly.</h3>
+        <div class="recognition-badges">
+            <div class="badge-item">
+                <a href="" target="_blank" rel="noopener noreferrer"></a>
+                <img src="img/cka.png" alt="Certified Kubernetes Administrator" class="badge-image badge-in-progress"></a>
+                <span class="badge-wip-label">In Progress</span>
+            </div>
+            <div class="badge-item">
+                <a href="https://www.credly.com/badges/dd860b3b-fea5-4cc5-bbb7-7d61b9184c2a" target="_blank" rel="noopener noreferrer">
+                <img src="img/devops_pro.png" alt="AWS DevOps Engineer Professional" class="badge-image"></a>
+            </div>
+            <div class="badge-item">
+                <a href="https://www.credly.com/badges/d1e71546-5f4d-4fb2-a42d-c58d0410adee" target="_blank" rel="noopener noreferrer">
+                <img src="img/developer.png" alt="AWS Developer Associate" class="badge-image"></a>
+            </div>
+            <div class="badge-item">
+                <a href="https://www.credly.com/badges/c42d9615-d348-40c0-b3b1-1b2f954d31bb" target="_blank" rel="noopener noreferrer">
+                <img src="img/solutions_architect.png" alt="AWS Solutions Architect Associate" class="badge-image"></a>
+            </div>
+        </div>
+        <div class="recognition-badges">
+            <div class="badge-item">
+                <a href="https://www.credly.com/badges/6e1c0796-9ea7-4e7e-8670-54e6e2affba5" target="_blank" rel="noopener noreferrer"><img src="img/cloud_practicioner.png" alt="AWS Cloud Practitioner" class="badge-image"> </a>
+            </div>
+            <div class="badge-item">
+                <a href="https://www.credly.com/badges/6d843dbb-b9b2-44dd-bd44-9903d9bef2a2" target="_blank" rel="noopener noreferrer"><img src="img/az900.png" alt="Microsoft Azure Fundamentals" class="badge-image"> </a>
+            </div>
+            <div class="badge-item">
+                <a href="ITIL_Foundations.pdf" target="_blank" rel="noopener noreferrer">
+                <img src="img/itil.png" alt="ITIL 4 Foundation" class="badge-image"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">LET'S CONNECT</h2>
+        <div class="contact-content">
+            <div class="contact-text">
+                <p>I'm always interested in discussing cloud infrastructure, DevOps, automation, new technologies and new opportunities. Feel free to reach out!</p>
+            </div>
+
+            <!-- Contact Form -->
+            <form 
+                class="contact-form" 
+                action="https://formspree.io/f/xdkdgeva" 
+                method="POST"
+            >
+                <div class="form-group">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" required placeholder="Your Name">
+                </div>
+
+                <div class="form-group">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" required placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                <label for="cf-message">Message</label>
+                <textarea 
+                    id="cf-message" 
+                    name="message" 
+                    rows="5" 
+                    required 
+                    placeholder="How can I help you?"
+                ></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                SEND MESSAGE
+                </button>
+            </form>
+
+            <div class="languages">
+                <h4>Languages I speak:</h4>
+                <div class="language-flags">
+                    <span class="language">🇬🇧 English (Native)</span>
+                    <span class="language">🇭🇺 Hungarian (Native)</span>
+                    <span class="language">🇸🇰 Slovak (Native)</span>
+                    <span class="language">🇨🇿 Czech (Conversational)</span>
+                    <span class="language">🇩🇪 German (A2/B1)</span>
+                </div>
+            </div>
+
+            </div>
+            <div class="contact-links">
+                <a href="https://github.com/RompfRobert" class="secondary-button" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/robertrompf" class="secondary-button" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Robert Rompf. Built with passion for cloud infrastructure.</p>
+    </div>
+</footer>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme')
+    || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    // 1. Apply stored/system theme on load
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+    // 2. Toggle on click
+    toggleBtn.addEventListener('click', () => {
+    const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+</script>
+
+    
 </body>
 </html>
