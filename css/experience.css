@@ -13,7 +13,7 @@
 }
 
 .company {
-  color: var(--accent-primary);
+  color: var(--accent-color);
   font-weight: bold;
   margin-bottom: 1rem;
 }
