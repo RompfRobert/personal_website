@@ -104,9 +104,11 @@
   <div class="container">
     <h2 class="section-title">EXPERIENCE & SKILLS</h2>
 
+
     <div class="timeline-content">
       <h3>Senior Cloud Infrastructure Engineer</h3>
       <p class="company">Accenture • 12/2024 – Present</p>
+      <p class="expand-instruction">Click here to expand</p>
       <ul class="skills">
         <li>
           Developed a proprietary AWS CLI-based orchestration tool that unified multiple automation scripts into a single, user-friendly package—enhancing maintainability, usability. Reduced human error, streamlined repetitive tasks, and improved operational efficiency by 5x in managing cloud infrastructure.
@@ -131,9 +133,11 @@
       </ul>
     </div>
 
+
     <div class="timeline-content">
       <h3>Cloud Infrastructure Engineer</h3>
       <p class="company">Accenture • 02/2023 – 11/2024</p>
+      <div class="expand-instruction">Click here to expand</div>
       <ul class="skills">
         <li>
           Crafted Python automation scripts for EC2 lifecycle, AMI restores, and scheduled backups—cutting execution times by 5× and improving operational efficiency  
@@ -271,6 +275,7 @@
     </div>
 </footer>
 
+
 <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme')
@@ -326,6 +331,37 @@
             document.body.classList.remove('menu-open');
         }
     });
+
+    // Timeline expand/collapse for mobile experience
+    function isMobile() {
+        return window.matchMedia('(max-width: 768px)').matches;
+    }
+
+    function setupTimelineExpanders() {
+        const timelineContents = document.querySelectorAll('.timeline-content');
+        timelineContents.forEach(tc => {
+            const instruction = tc.querySelector('.expand-instruction');
+            if (!instruction) return;
+            tc.classList.remove('expanded');
+            instruction.style.display = isMobile() ? 'block' : 'none';
+            // Only allow expand/collapse on mobile
+            if (isMobile()) {
+                tc.addEventListener('click', function handler(e) {
+                    // Only expand if not already expanded and not clicking a link
+                    if (!tc.classList.contains('expanded') && !e.target.closest('a')) {
+                        tc.classList.add('expanded');
+                        instruction.style.display = 'none';
+                    } else if (tc.classList.contains('expanded') && !e.target.closest('a')) {
+                        tc.classList.remove('expanded');
+                        instruction.style.display = 'block';
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', setupTimelineExpanders);
+    window.addEventListener('resize', setupTimelineExpanders);
 </script>
 
     

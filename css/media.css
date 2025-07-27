@@ -1,3 +1,9 @@
+@media (min-width: 768px) {
+    .expand-instruction {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     section .container {
         margin-top: 4rem;
@@ -125,6 +131,40 @@
         margin-bottom: 2rem;
         border-radius: 8px;
         box-shadow: var(--primary-text) 8px 8px;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* max-height: 200px; */
+        position: relative;
+        cursor: pointer;
+    }
+
+    .timeline-content.expanded {
+        max-height: 2000px; /* Large enough to show all content */
+        cursor: default;
+    }
+
+    .timeline-content .skills,
+    .timeline-content .expand-instruction {
+        display: none;
+    }
+
+    .timeline-content .expand-instruction {
+        display: block;
+        margin-top: 0.5rem;
+        color: var(--primary-text);
+        /* font-size: 1rem; */
+        text-align: center;
+        font-style: italic;
+        cursor: pointer;
+    }
+
+    .timeline-content.expanded .skills {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .timeline-content.expanded .expand-instruction {
+        display: none;
     }
 
     /* Certificates Section */
