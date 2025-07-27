@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/experience.css">
     <link rel="stylesheet" href="css/certificates.css">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 
@@ -18,11 +19,19 @@
     <div class="container">
         <div class="header-content">
             <div class="terminal-nav" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-                <span class="terminal-prompt">&gt; $ Home </span>
-                <span class="terminal-text" id="terminal-text"></span>
-                <span class="terminal-cursor">█</span>
+                <span class="terminal-prompt">&gt; $ Home </span> 
+                <span class="terminal-text" id="terminal-text"></span> 
+                <span class="terminal-cursor">█</span> 
             </div>
-            <nav class="nav">
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span> 
+                <span class="hamburger-line"></span> 
+                <span class="hamburger-line"></span> 
+            </button>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav" id="nav-menu">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience & Skills</a>
                 <a href="#certificates" class="nav-link">Certificates</a>
@@ -73,16 +82,16 @@
 
                 <div class="stats">
                     <div class="stat">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-number">3+</span> 
+                        <span class="stat-label">Years Experience</span> 
                     </div>
                     <div class="stat">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">Certifications</span>
+                        <span class="stat-number">6</span> 
+                        <span class="stat-label">Certifications</span> 
                     </div>
                     <div class="stat">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Languages</span>
+                        <span class="stat-number">5</span> 
+                        <span class="stat-label">Languages</span> 
                     </div>
                 </div>
             </div>
@@ -101,23 +110,23 @@
       <ul class="skills">
         <li>
           Developed a proprietary AWS CLI-based orchestration tool that unified multiple automation scripts into a single, user-friendly package—enhancing maintainability, usability. Reduced human error, streamlined repetitive tasks, and improved operational efficiency by 5x in managing cloud infrastructure.
-          <span>#python</span><span>#bash</span><span>#GitLab</span><span>#GitLab CI</span><span>#aws</span><span>#boto3</span><span>#linux</span>
+          <span>#python</span> <span>#bash</span> <span>#GitLab</span> <span>#GitLab CI</span> <span>#aws</span> <span>#boto3</span> <span>#linux</span> 
         </li>
         <li>
             Designed and implemented a fully automated disaster-recovery pipeline using GitLab CI/CD and containerized jobs, executing on a defined schedule to ensure continuous protection.
-            <span>#CloudFormation</span><span>#GitLab CI</span><span>#terraform</span><span>#aws</span><span>#python</span><span>#s3</span><span>#yaml</span><span>#containers</span><span>#git</span><span>#GitLab</span><span>#automation</span><span>#DisasterRecovery</span>
+            <span>#CloudFormation</span> <span>#GitLab CI</span> <span>#terraform</span> <span>#aws</span> <span>#python</span> <span>#s3</span> <span>#yaml</span>  <span>#containers</span> <span>#git</span> <span>#GitLab</span>  <span>#automation</span>  <span>#DisasterRecovery</span> 
         </li>
         <li>
           Automated EC2 instance decommissioning—eliminating manual interactions with AWS, Red Hat Hybrid Console, and Satellite; ensured error‑free execution and sub‑minute completion times.
-          <span>#REST API</span><span>#python</span><span>#RHEL</span><span>#boto3</span><span>#linux</span>
+          <span>#REST API</span> <span>#python</span> <span>#RHEL</span> <span>#boto3</span> <span>#linux</span> 
         </li>
         <li>
           Integrated ServiceNow with AWS APIs to power an on‑demand self-service backup portal—reducing manual intervention, on‑call burden, and paving the way for self‑service infrastructure requests.
-          <span>#REST API</span><span>#API Gateway</span><span>#lambda</span><span>#python</span><span>#ServiceNow</span><span>#selfservice</span>
+          <span>#REST API</span> <span>#API Gateway</span> <span>#lambda</span> <span>#python</span> <span>#ServiceNow</span> <span>#selfservice</span> 
         </li>
         <li>
           Provided technical mentorship and DevOps best‑practice guidance, driving automation adoption and cross‑team collaboration.
-          <span>#mentorship</span><span>#training</span><span>#leadership</span><span>#documentation</span>
+          <span>#mentorship</span> <span>#training</span> <span>#leadership</span> <span>#documentation</span> 
         </li>
       </ul>
     </div>
@@ -128,23 +137,23 @@
       <ul class="skills">
         <li>
           Crafted Python automation scripts for EC2 lifecycle, AMI restores, and scheduled backups—cutting execution times by 5× and improving operational efficiency  
-          <span>#python</span><span>#aws</span><span>#boto3</span><span>#optimization</span><span>#coding</span>
+          <span>#python</span> <span>#aws</span> <span>#boto3</span> <span>#optimization</span> <span>#coding</span> 
         </li>
         <li>
           Developed a multi‑region file‑sync tool to guarantee data consistency across three sites—eliminating manual errors and ensuring robust replication  
-          <span>#bash</span><span>#python</span><span>#GitLab</span><span>#s3</span><span>#datareplication</span><span>#git</span>
+          <span>#bash</span> <span>#python</span> <span>#GitLab</span> <span>#s3</span> <span>#datareplication</span> <span>#git</span> 
         </li>
         <li>
           Rolled out Ansible playbooks for automated Linux patching—slashing evening & weekend maintenance windows and standardizing configuration drift controls  
-          <span>#ansible</span><span>#RHEL</span><span>#linux</span><span>#maintenance</span><span>#security</span>
+          <span>#ansible</span> <span>#RHEL</span> <span>#linux</span> <span>#maintenance</span> <span>#security</span> 
         </li>
         <li>
           Managed a fleet of RHEL servers-handling system administration, monitoring, patch orchestration, and on‑call troubleshooting to maintain 99.9% uptime  
-          <span>#systemadmin</span><span>#monitoring</span><span>#troubleshooting</span><span>#RHEL</span><span>#linux</span>
+          <span>#systemadmin</span> <span>#monitoring</span> <span>#troubleshooting</span> <span>#RHEL</span> <span>#linux</span> 
         </li>
         <li>
           Created reusable Bash scripts and Ansible roles for routine sysadmin tasks—accelerating deployments and freeing up engineering time for strategic projects  
-          <span>#bash</span><span>#ansible</span><span>#automation</span><span>#reusability</span>
+          <span>#bash</span> <span>#ansible</span> <span>#automation</span> <span>#reusability</span> 
         </li>
       </ul>
     </div>
@@ -154,14 +163,17 @@
 <!-- Certificates Section -->
 <section id="certificates" class="certificates">
     <div class="container">
-        <h2 class="certifacte-title">CERTIFICATES</h2>
+        <h2 class="section-title">CERTIFICATES</h2>
         <h3 class="certifacte-subtitle"> Click on any of these to view my badge on credly.</h3>
         <div class="recognition-badges">
+
             <div class="badge-item">
-                <a href="" target="_blank" rel="noopener noreferrer"></a>
-                <img src="img/cka.png" alt="Certified Kubernetes Administrator" class="badge-image badge-in-progress"></a>
-                <span class="badge-wip-label">In Progress</span>
-            </div>
+                    <span style="position: relative; display: inline-block;">
+                        <img src="img/cka.png" alt="Certified Kubernetes Administrator (In Progress, Not Yet Obtained)" class="badge-image badge-in-progress" aria-disabled="true">
+                        <span class="badge-wip-label">IN PROGRESS</span> 
+                </div>
+            
+            
             <div class="badge-item">
                 <a href="https://www.credly.com/badges/dd860b3b-fea5-4cc5-bbb7-7d61b9184c2a" target="_blank" rel="noopener noreferrer">
                 <img src="img/devops_pro.png" alt="AWS DevOps Engineer Professional" class="badge-image"></a>
@@ -174,8 +186,8 @@
                 <a href="https://www.credly.com/badges/c42d9615-d348-40c0-b3b1-1b2f954d31bb" target="_blank" rel="noopener noreferrer">
                 <img src="img/solutions_architect.png" alt="AWS Solutions Architect Associate" class="badge-image"></a>
             </div>
-        </div>
-        <div class="recognition-badges">
+        <!-- </div>
+        <div class="recognition-badges"> -->
             <div class="badge-item">
                 <a href="https://www.credly.com/badges/6e1c0796-9ea7-4e7e-8670-54e6e2affba5" target="_blank" rel="noopener noreferrer"><img src="img/cloud_practicioner.png" alt="AWS Cloud Practitioner" class="badge-image"> </a>
             </div>
@@ -234,11 +246,11 @@
             <div class="languages">
                 <h4>Languages I speak:</h4>
                 <div class="language-flags">
-                    <span class="language">🇬🇧 English (Native)</span>
-                    <span class="language">🇭🇺 Hungarian (Native)</span>
-                    <span class="language">🇸🇰 Slovak (Native)</span>
-                    <span class="language">🇨🇿 Czech (Conversational)</span>
-                    <span class="language">🇩🇪 German (A2/B1)</span>
+                    <span class="language">🇬🇧 English</span> 
+                    <span class="language">🇭🇺 Hungarian</span> 
+                    <span class="language">🇸🇰 Slovak</span> 
+                    <span class="language">🇨🇿 Czech</span> 
+                    <span class="language">🇩🇪 German (B1)</span> 
                 </div>
             </div>
 
@@ -274,6 +286,45 @@
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Hamburger menu functionality
+    const hamburgerToggle = document.getElementById('hamburger-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Toggle hamburger menu
+    hamburgerToggle.addEventListener('click', () => {
+        hamburgerToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburgerToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburgerToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            hamburgerToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
     });
 </script>
 
