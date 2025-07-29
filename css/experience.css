@@ -39,15 +39,15 @@
 
 /* Skills tags */
 .skills span {
-    color: var(--primary-text);
-    margin-left: 5px;
-    background-color: var(--accent-before);
-    padding: 2px 4px;
-    border-radius: 3px;
+  color: var(--primary-text);
+  margin-left: 5px;
+  background-color: var(--accent-before);
+  padding: 2px 4px;
+  border-radius: 3px;
 }
 
 .skills span:hover {
-    cursor: default;
-    transition: all 0.3s ease;
-    background-color: var(--accent-after);
+  cursor: default;
+  transition: all 0.3s ease;
+  background-color: var(--accent-after);
 }
