@@ -5,17 +5,41 @@
   align-items: center;
 }
 
+.timeline-content {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
 .timeline-content h3 {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary-text);
-  /* margin-top: 1rem; */
+  margin: 0;
 }
 
 .company {
   color: var(--accent-color);
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.expand-arrow {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+
+.timeline-content.expanded .expand-arrow {
+  transform: rotate(180deg);
 }
 
 .timeline-content ul {

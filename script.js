@@ -53,72 +53,53 @@ document.addEventListener("keydown", (e) => {
   }
 })
 
-// Timeline expand/collapse functionality with smooth animations (mobile only)
-function isMobile() {
-  return window.matchMedia("(max-width: 768px)").matches
-}
-
+// Timeline expand/collapse functionality for desktop and mobile
 function setupTimelineExpanders() {
   const timelineContents = document.querySelectorAll(".timeline-content")
 
   timelineContents.forEach((tc) => {
-    const instruction = tc.querySelector(".expand-instruction")
-    const skills = tc.querySelector(".skills")
+    const header = tc.querySelector(".timeline-header")
+    const expandArrow = tc.querySelector(".expand-arrow")
     const closeBtn = tc.querySelector(".timeline-close-btn")
 
-    if (!instruction || !skills || !closeBtn) return
+    if (!header || !expandArrow || !closeBtn) return
 
-    // Reset state
-    tc.classList.remove("expanded")
-
-    // Remove any existing event listeners by cloning the element
+    // Remove existing event listeners by cloning
     const newTc = tc.cloneNode(true)
     tc.parentNode.replaceChild(newTc, tc)
 
-    // Get references to elements in the new cloned element
-    const newInstruction = newTc.querySelector(".expand-instruction")
-    const newSkills = newTc.querySelector(".skills")
+    const newHeader = newTc.querySelector(".timeline-header")
+    const newExpandArrow = newTc.querySelector(".expand-arrow")
     const newCloseBtn = newTc.querySelector(".timeline-close-btn")
 
-    // Only add mobile functionality if we're on mobile
-    if (isMobile()) {
-      // Function to expand timeline
-      const expandTimeline = () => {
-        newTc.classList.add("expanded")
-        setTimeout(() => {
-          newTc.style.cursor = "default"
-        }, 400)
+    // Function to expand timeline
+    const expandTimeline = (e) => {
+      // Prevent expansion if clicking on links
+      if (e && e.target.closest("a")) {
+        return
       }
+      newTc.classList.add("expanded")
+    }
 
-      // Function to collapse timeline
-      const collapseTimeline = () => {
-        newTc.classList.remove("expanded")
-        newTc.style.cursor = "pointer"
-      }
+    // Function to collapse timeline
+    const collapseTimeline = (e) => {
+      e.stopPropagation()
+      newTc.classList.remove("expanded")
+    }
 
-      // Add click handler for expansion (clicking on the main content area)
-      newTc.addEventListener("click", (e) => {
-        // Prevent expansion if clicking on links, spans, or the close button
-        if (e.target.closest("a") || e.target.closest("span") || e.target.closest(".timeline-close-btn")) {
-          return
-        }
+    // Click on header or arrow to expand
+    newHeader.addEventListener("click", expandTimeline)
+    newExpandArrow.addEventListener("click", expandTimeline)
 
-        const isExpanded = newTc.classList.contains("expanded")
+    // Click close button to collapse
+    newCloseBtn.addEventListener("click", collapseTimeline)
 
-        if (!isExpanded) {
-          expandTimeline()
-        }
+    // Prevent collapse when clicking inside the skills section
+    const skills = newTc.querySelector(".skills")
+    if (skills) {
+      skills.addEventListener("click", (e) => {
+        e.stopPropagation()
       })
-
-      // Add dedicated close button handler
-      newCloseBtn.addEventListener("click", (e) => {
-        e.stopPropagation() // Prevent event bubbling
-        collapseTimeline()
-      })
-    } else {
-      // Desktop: ensure content is always visible and remove cursor pointer
-      newTc.style.cursor = "default"
-      newTc.classList.remove("expanded") // Remove any expanded class
     }
   })
 }
