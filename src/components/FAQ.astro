@@ -1,0 +1,70 @@
+---
+const faqs = [
+  {
+    question: 'How does contracting through a Slovak LLC work?',
+    answer:
+      'I operate as a registered company in Slovakia. You sign a B2B service agreement with my LLC and pay invoices. No employment relationship, no payroll complexity. Works cleanly with UK, US, and EU companies.',
+  },
+  {
+    question: 'What is your availability?',
+    answer:
+      'I am currently available for new contracts. I take on a maximum of 2–3 active clients at a time to maintain quality. Reach out early if you have an upcoming need.',
+  },
+  {
+    question: 'Do you work fully remote?',
+    answer:
+      'Yes. I work remotely and have done so throughout my career. I am available for occasional on-site visits to UK or European locations for significant project milestones if required.',
+  },
+  {
+    question: 'What is your hourly rate?',
+    answer:
+      'My rate depends on scope, duration, and complexity. Reach out and I will send you a rate card within 24 hours.',
+  },
+  {
+    question: 'Can you work in our timezone?',
+    answer:
+      'I am based in CET (Central European Time). I have full overlap with UK hours and 4–5 hours daily overlap with US Eastern. For US Pacific, async communication works well.',
+  },
+  {
+    question: 'Do you sign NDAs?',
+    answer: 'Yes, standard practice. I sign NDAs before any sensitive technical discussion.',
+  },
+];
+---
+
+<section class="border-t border-[#1f1f1f] py-24 md:py-32">
+  <div class="mx-auto max-w-4xl px-5 md:px-8">
+    <div class="mb-16 text-center">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-heading">Common Questions</h2>
+    </div>
+
+    <div class="flex flex-col divide-y divide-[#1f1f1f]">
+      {
+        faqs.map((faq) => (
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span class="font-display text-base font-medium text-[#f0f0f0] transition-colors duration-200">
+                {faq.question}
+              </span>
+              <svg
+                class="faq-arrow flex-shrink-0 text-muted transition-all duration-200"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </summary>
+            <p class="mt-4 pl-0 text-sm leading-relaxed text-muted">{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

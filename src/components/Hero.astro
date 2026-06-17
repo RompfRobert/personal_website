@@ -1,0 +1,93 @@
+---
+import { AVAILABLE } from '../data/site';
+---
+
+<section class="relative flex min-h-screen items-center pt-16">
+  <div class="mx-auto w-full max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <!-- Left: Copy -->
+      <div>
+        {
+          AVAILABLE && (
+            <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1.5">
+              <span class="relative flex h-2 w-2">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              </span>
+              <span class="font-mono text-xs font-medium text-green-400">
+                Available for new contracts
+              </span>
+            </div>
+          )
+        }
+
+        <h1
+          class="mb-6 font-display text-4xl font-bold leading-[1.08] tracking-tight text-[#f0f0f0] sm:text-5xl lg:text-6xl"
+        >
+          Senior DevOps<br />
+          Engineer.<br />
+          <span class="text-accent">Available for<br />Remote Contracts.</span>
+        </h1>
+
+        <p class="mb-10 max-w-xl text-lg leading-relaxed text-muted">
+          I design, automate, and scale AWS infrastructure for startups and scale-ups. B2B
+          contractor via Slovak LLC — no hiring overhead, no long onboarding, just infrastructure
+          that works.
+        </p>
+
+        <div class="mb-12 flex flex-wrap gap-3">
+          <a href="#contact" class="btn-primary">Get In Touch</a>
+          <a href="#experience" class="btn-ghost">See My Work</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener" class="btn-ghost">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline
+                points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"
+              ></line></svg
+            >
+            Resume
+          </a>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {
+            [
+              { value: '4+', label: 'Years Experience' },
+              { value: '4', label: 'AWS Certifications' },
+              { value: '5', label: 'Languages Spoken' },
+              { value: 'Now', label: 'Available' },
+            ].map((stat) => (
+              <div class="rounded-lg border border-[#1f1f1f] p-3 text-center">
+                <div class="font-display text-2xl font-bold text-[#f0f0f0]">{stat.value}</div>
+                <div class="mt-0.5 font-mono text-xs text-muted">{stat.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Right: Profile image -->
+      <div class="hidden items-center justify-center lg:flex">
+        <div
+          class="overflow-hidden rounded-2xl bg-[#111]"
+          style="aspect-ratio: 3/4; max-width: 360px;"
+        >
+          <img
+            src="/img/headshot.jpeg"
+            alt="Robert Rompf"
+            class="h-full w-full object-cover object-center"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

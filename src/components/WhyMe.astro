@@ -1,0 +1,47 @@
+---
+const reasons = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: 'No Hiring Overhead',
+    description:
+      'B2B contract via Slovak LLC. No employer contributions, no benefits administration, no notice period complexity. You get a specialist on-demand.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Production-Grade Output',
+    description:
+      'Four AWS certifications including DevOps Engineer Professional. Every deliverable is documented, modular, and built to be maintained by your team after engagement ends.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    title: 'Timezone Compatible',
+    description:
+      'Based in Central European Time. Full overlap with UK working hours and 4–5 hour overlap with US East Coast. Async-first communication with daily written updates.',
+  },
+];
+---
+
+<section class="border-y border-[#1f1f1f] py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5 md:px-8">
+    <div class="mb-16">
+      <p class="section-label">Why Work With Me</p>
+      <h2 class="section-heading">
+        Why Contractors Beat Full-Time<br class="hidden md:inline" /> Hires for Infrastructure Work
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        reasons.map((reason) => (
+          <div class="flex flex-col gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-[#1f1f1f] bg-[#1a1a1a] text-accent">
+              <Fragment set:html={reason.icon} />
+            </div>
+            <h3 class="font-display text-xl font-semibold text-[#f0f0f0]">{reason.title}</h3>
+            <p class="text-sm leading-relaxed text-muted">{reason.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

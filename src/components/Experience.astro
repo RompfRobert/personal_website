@@ -1,0 +1,90 @@
+---
+const roles = [
+  {
+    company: 'Vivicta',
+    title: 'Senior DevOps Engineer',
+    period: 'Sep 2025 – Present',
+    current: true,
+    bullets: [
+      'Standardized Terraform module library across multiple client AWS accounts — reduced environment onboarding from days to hours and enforced consistent security patterns.',
+      'Built event-driven incident automation: CloudWatch alarms automatically open and close ServiceNow tickets via EventBridge, eliminating manual incident lifecycle management.',
+      'Primary AWS SME — own architecture decisions, automation strategy, and best practices across the team.',
+    ],
+  },
+  {
+    company: 'Accenture',
+    title: 'Senior Cloud Infrastructure Engineer',
+    period: 'Dec 2024 – Aug 2025',
+    current: false,
+    bullets: [
+      'Built a unified Python CLI consolidating multiple AWS automation scripts into one tool — cut routine operations ~5× and drove adoption across teams.',
+      'Automated EC2 decommissioning end-to-end (Python + Red Hat Satellite/Insights APIs) — reduced a 30-minute manual runbook to seconds and eliminated human error.',
+      'Designed self-service backup workflow (ServiceNow → API Gateway → Lambda → AWS Backup) so users schedule backups without engineer involvement, eliminating after-hours callouts.',
+    ],
+  },
+  {
+    company: 'Accenture',
+    title: 'Cloud Infrastructure Engineer',
+    period: 'Feb 2023 – Nov 2024',
+    current: false,
+    bullets: [
+      'Automated EC2 lifecycle operations (backups, AMI restores, instance management) in Python across multiple environments — replacing manual runbooks.',
+      'Maintained 99.9% uptime across RHEL fleet through on-call incident response, root cause analysis, and Ansible-automated patching.',
+      'Built Ansible playbooks and Bash automation to eliminate repetitive sysadmin tasks — standardized ops across Linux hosts.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5 md:px-8">
+    <div class="mb-16">
+      <p class="section-label">Experience</p>
+      <h2 class="section-heading">Selected Experience</h2>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      {
+        roles.map((role) => (
+          <article class="border-l-2 border-l-[#1f1f1f] py-2 pl-6 transition-all duration-200 hover:border-l-[#444]">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
+              <div class="flex-shrink-0 sm:w-44">
+                <div class="font-mono text-xs text-muted">{role.period}</div>
+                {role.current && (
+                  <span class="mt-1 inline-block rounded-full border border-green-500/20 bg-green-500/10 px-2 py-0.5 font-mono text-[10px] text-green-400">
+                    Current
+                  </span>
+                )}
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
+                  <h3 class="font-display text-lg font-semibold text-[#f0f0f0]">{role.title}</h3>
+                  <span class="hidden text-[#333] sm:block">·</span>
+                  <span class="font-mono text-sm text-muted">{role.company}</span>
+                </div>
+                <ul class="flex flex-col gap-3">
+                  {role.bullets.map((bullet) => (
+                    <li class="flex gap-3 text-sm leading-relaxed text-muted">
+                      <svg
+                        class="mt-1 flex-shrink-0"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#94A3B8"
+                        stroke-width="2.5"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

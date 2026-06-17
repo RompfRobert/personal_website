@@ -1,0 +1,43 @@
+---
+const categories = [
+  { label: 'Cloud', items: ['AWS', 'Azure'] },
+  { label: 'IaC', items: ['Terraform', 'Ansible', 'CloudFormation', 'Terragrunt'] },
+  { label: 'Containers', items: ['Kubernetes', 'Docker', 'K3s', 'ArgoCD'] },
+  { label: 'CI/CD', items: ['GitHub Actions', 'GitLab CI', 'ArgoCD'] },
+  {
+    label: 'Monitoring',
+    items: ['Prometheus', 'Grafana', 'Graylog', 'CloudWatch', 'Grafana OnCall'],
+  },
+  { label: 'Languages', items: ['Python', 'Bash', 'SQL'] },
+  { label: 'ITSM / Ops', items: ['ServiceNow', 'GLPI', 'Keycloak', 'Wiki.js'] },
+  { label: 'Other', items: ['Linux (RHEL/Ubuntu)', 'Git', 'EventBridge', 'Lambda', 'Boto3'] },
+];
+---
+
+<section id="stack" class="border-t border-[#1f1f1f] py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5 md:px-8">
+    <div class="mb-16">
+      <p class="section-label">Tech Stack</p>
+      <h2 class="section-heading">Tech Stack</h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        categories.map((cat) => (
+          <div>
+            <h3 class="mb-3 font-mono text-xs font-medium uppercase tracking-widest text-muted">
+              {cat.label}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {cat.items.map((item) => (
+                <span class="cursor-default rounded-md border border-[#1a1a1a] bg-[#111] px-3 py-1.5 font-mono text-xs text-[#aaa] transition-all duration-200 hover:border-[#333] hover:text-[#f0f0f0]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

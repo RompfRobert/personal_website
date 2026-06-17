@@ -1,0 +1,108 @@
+---
+const certs = [
+  {
+    name: 'AWS DevOps Engineer Professional',
+    img: '/img/devops_pro.png',
+    link: 'https://www.credly.com/badges/dd860b3b-fea5-4cc5-bbb7-7d61b9184c2a',
+    inProgress: false,
+  },
+  {
+    name: 'AWS Developer Associate',
+    img: '/img/developer.png',
+    link: 'https://www.credly.com/badges/d1e71546-5f4d-4fb2-a42d-c58d0410adee',
+    inProgress: false,
+  },
+  {
+    name: 'AWS Solutions Architect Associate',
+    img: '/img/solutions_architect.png',
+    link: 'https://www.credly.com/badges/c42d9615-d348-40c0-b3b1-1b2f954d31bb',
+    inProgress: false,
+  },
+  {
+    name: 'AWS Cloud Practitioner',
+    img: '/img/cloud_practicioner.png',
+    link: 'https://www.credly.com/badges/6e1c0796-9ea7-4e7e-8670-54e6e2affba5',
+    inProgress: false,
+  },
+  {
+    name: 'Microsoft Azure Fundamentals',
+    img: '/img/az900.png',
+    link: 'https://www.credly.com/badges/6d843dbb-b9b2-44dd-bd44-9903d9bef2a2',
+    inProgress: false,
+  },
+  {
+    name: 'ITIL 4 Foundation',
+    img: '/img/itil.png',
+    link: '/ITIL_Foundations.pdf',
+    inProgress: false,
+  },
+  {
+    name: 'CKA — Certified Kubernetes Administrator',
+    img: '/img/cka.png',
+    link: '#',
+    inProgress: true,
+  },
+];
+---
+
+<section id="certifications" class="border-t border-[#1f1f1f] py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5 md:px-8">
+    <div class="mb-16">
+      <p class="section-label">Certifications</p>
+      <h2 class="section-heading">Certifications</h2>
+    </div>
+
+    <div class="flex flex-wrap justify-start gap-4">
+      {
+        certs.map((cert) => (
+          <a
+            href={cert.inProgress ? undefined : cert.link}
+            target={cert.inProgress ? undefined : '_blank'}
+            rel={cert.inProgress ? undefined : 'noopener noreferrer'}
+            class:list={[
+              'group relative flex w-36 flex-col items-center gap-3 rounded-xl border border-[#1f1f1f] bg-[#111] p-5 text-center transition-all duration-200',
+              cert.inProgress
+                ? 'cursor-default opacity-50'
+                : 'hover:border-accent/40 hover:bg-[#141414]',
+            ]}
+          >
+            <div class="relative">
+              <img
+                src={cert.img}
+                alt={cert.name}
+                width="80"
+                height="80"
+                class="h-20 w-20 object-contain"
+                loading="lazy"
+              />
+              {cert.inProgress && (
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="rounded-full border border-[#333] bg-[#111] px-1.5 py-0.5 font-mono text-[9px] font-medium text-muted">
+                    In Progress
+                  </span>
+                </div>
+              )}
+            </div>
+            <span class="font-mono text-xs leading-snug text-muted">{cert.name}</span>
+            {!cert.inProgress && (
+              <span class="absolute right-2 top-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#00D4FF"
+                  stroke-width="2.5"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </span>
+            )}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

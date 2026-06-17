@@ -1,0 +1,76 @@
+---
+const services = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+    title: 'Cloud Infrastructure Design',
+    description:
+      'Design and implement scalable, secure AWS environments from scratch. Multi-account architecture, VPC design, networking, IAM, and cost optimisation built in from day one.',
+    tags: ['AWS', 'VPC', 'IAM', 'EC2', 'Route53', 'Cost Optimisation'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    title: 'Infrastructure as Code',
+    description:
+      'Reusable, modular Terraform that your team can actually maintain. Standardised modules per resource type, consistent naming conventions, remote state, and full CI/CD integration.',
+    tags: ['Terraform', 'Terragrunt', 'GitHub Actions', 'GitLab CI', 'S3', 'DynamoDB'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>`,
+    title: 'CI/CD Pipeline Engineering',
+    description:
+      'Build or overhaul deployment pipelines that reduce release risk and increase velocity. From Git workflow design to container builds to environment promotion strategies.',
+    tags: ['GitHub Actions', 'GitLab CI', 'Docker', 'ECR', 'ArgoCD', 'Kubernetes'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    title: 'Monitoring and Observability',
+    description:
+      'Full-stack observability setup: metrics, logs, alerting, and on-call management. You will know what is broken before your users do.',
+    tags: ['Prometheus', 'Grafana', 'Graylog', 'Grafana OnCall', 'CloudWatch', 'PagerDuty'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
+    title: 'Managed Operations Platform',
+    description:
+      'For clients who want more than just infrastructure: a fully managed CMDB, ITSM ticketing, identity management, log aggregation, and documentation platform hosted and maintained on dedicated infrastructure.',
+    tags: ['GLPI', 'Keycloak', 'Wiki.js', 'Graylog', 'Grafana', 'Hetzner'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    title: 'Automation and Tooling',
+    description:
+      'Custom Python tooling, AWS Lambda automation, event-driven incident workflows, and self-service portals that eliminate repetitive manual work for your team.',
+    tags: ['Python', 'Boto3', 'Lambda', 'EventBridge', 'ServiceNow', 'REST APIs'],
+  },
+];
+---
+
+<section id="services" class="py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5 md:px-8">
+    <div class="mb-16">
+      <p class="section-label">What I Offer</p>
+      <h2 class="section-heading">
+        Defined service packages,<br class="hidden md:inline" /> not vague consulting.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <article class="card group flex flex-col hover:bg-[#141414]">
+            <div class="mb-5 flex h-10 w-10 items-center justify-center rounded-md bg-[#1a1a1a] text-muted transition-colors duration-200">
+              <Fragment set:html={service.icon} />
+            </div>
+            <h3 class="mb-3 font-display text-lg font-semibold text-[#f0f0f0]">{service.title}</h3>
+            <p class="mb-5 flex-1 text-sm leading-relaxed text-muted">{service.description}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {service.tags.map((tag) => (
+                <span class="pill">{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
